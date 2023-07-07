@@ -7,18 +7,9 @@ on:
       - master
 
 jobs:
-  tag_release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Bump version and push tag
-        uses: hennejg/github-tag-action@v4.1.jh1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
   docker:
     name: Build Docker Image
     runs-on: ubuntu-latest
-    needs: tag_release
     steps:
       - uses: actions/checkout@v3
       - name: Kaniko build
