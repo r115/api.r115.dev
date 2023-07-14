@@ -7,18 +7,7 @@
     },
     "plugins": {
         "@release-it/conventional-changelog": {
-            "name": "conventionalcommits",
-            "types": [
-                {
-                    "type": "feat",
-                    "section": "Features"
-                },
-                {
-                    "type": "fix",
-                    "section": "Bug Fixes"
-                },
-                {}
-            ]
+            "name": "angular"
         }
     }
 }
