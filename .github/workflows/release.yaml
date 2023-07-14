@@ -24,8 +24,8 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - run: yarn install
-      - run: yarn release
+      - run: npm install
+      - run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   build_docker_image:
