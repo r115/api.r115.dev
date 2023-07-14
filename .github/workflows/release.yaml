@@ -4,10 +4,26 @@ on:
   push:
     branches:
       - main
-      - master
 
 jobs:
-  build:
+  tag_release:
+    name: Tag Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: git config
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+      - run: yarn install
+      - run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build_docker_image:
+    name: Build Docker Image
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
