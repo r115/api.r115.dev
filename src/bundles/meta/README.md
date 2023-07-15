@@ -1,0 +1,1 @@
+Basic descriptors around things we know well.
