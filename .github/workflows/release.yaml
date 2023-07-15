@@ -34,7 +34,7 @@ jobs:
   build_docker_image:
     name: Build Docker Image
     runs-on: ubuntu-latest
-    depends-on: tag_release
+    needs: tag_release
     steps:
       - name: Checkout
         uses: actions/checkout@v3
